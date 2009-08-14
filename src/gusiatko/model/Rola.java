@@ -1,26 +1,38 @@
 package gusiatko.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Rola {
 	private String nazwa;
-	private String uprawnienie;
+	private List<Uprawnienie> uprawnienia;
+
+	public Rola() {
+		uprawnienia = new ArrayList<Uprawnienie>();
+	}
+
+	public String getNazwa() {
+		return nazwa;
+	}
+
+	public void setNazwa(String nazwa) {
+		this.nazwa = nazwa;
+	}
+
+	public void setUprawnienie(List<Uprawnienie> uprawnienie) {
+		this.uprawnienia = uprawnienie;
+	}
+
+	public List<Uprawnienie> getUprawnienie() {
+		return uprawnienia;
+	}
 	
-public Rola() {
-	// TODO Auto-generated constructor stub
-}
+	public void addUprawnienie(Uprawnienie upr){
+		uprawnienia.add(upr);
+	}
+	
+	public boolean removeUprawnienie(Uprawnienie upr){
+		return uprawnienia.remove(upr);
+	}
 
-public String getNazwa() {
-	return nazwa;
-}
-
-public void setNazwa(String nazwa) {
-	this.nazwa = nazwa;
-}
-
-public String getUprawnienie() {
-	return uprawnienie;
-}
-
-public void setUprawnienie(String uprawnienie) {
-	this.uprawnienie = uprawnienie;
-}
 }
